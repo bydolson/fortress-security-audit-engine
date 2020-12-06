@@ -6,26 +6,26 @@ Fortress Live Security Audit runs a real-time security audit on deployed smart c
 
 Fortress requires Python 3.6+ and [solc](https://github.com/ethereum/solidity/), the Solidity compiler.
 
-###Prequisites
+### Prequisites
 
 - [Python virtual environment](https://docs.conda.io/en/latest/miniconda.html)
-- [Solidity Compiler](https://docs.soliditylang.org/en/v0.7.4/installing-solidity.html) before you run setup.py
+- [Solidity Compiler](https://docs.soliditylang.org/en/v0.7.4/installing-solidity.html)
 - [Solc Select](https://github.com/crytic/solc-select/)
 
-###Install
+### Install
 
 ```bash
 git clone https://github.com/crytic/fortress.git && cd fortress
-(sudo) python3 setup.py install
-solc
+python3 setup.py install (make sure Solc Select is installed)
 ```
 
 ## Manually run security audit to a contract hosted on Etherscan
 
 fortress 0x7F37f78cBD74481E593F9C737776F7113d76B315
 
-## Live run security audit to DeFi app (to transactions and events of deployed contracts of DeFi app)
+## Live run security audit  to a contract of DeFi app
 
+```bash
 1 - Place fortress-security-audit-engine, fortress-event-listener, fortress-event-consumer and fortress-tdr-engine and in the same directory
 2 - Update your DeFi app smart contract functions with the event listener function as stated in fortress-event-listener README so it will emit the events for threat detection before a contract change/transaction occurs. We choose not to do this automatically since it's your business logic. The idea is to check for a threat BEFORE an event occurs and stop it from happening if necessary.
 3 - Update fortress-event-consumer code according to events you've chosen to listen on fortress-event-listener as stated in README. In the next version(alpha) all consumer code will be generated automatically by running a script.
@@ -33,6 +33,7 @@ fortress 0x7F37f78cBD74481E593F9C737776F7113d76B315
 5 - Run fortress-event-consumer as stated in README.
 6 - Make sure Prequisites for fortress-security-audit-engine are installed. Manually run the example in above section to check everything is working.
 7 - Run fortress-tdr-engine as stated in README. Threat detection and Response engine will query the MongoDB database of events using the REST API that Fortress Event Consumer defines and looks of threat patterns on these events. If a pattern gets detected, it will automatically run security audit and stop/let the event contract execution.
+```
 
 ## Detectors
 
