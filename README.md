@@ -1,6 +1,6 @@
 # Fortress Live Security Audit Engine
 
-Fortress Live Security Audit runs a real-time security audit on deployed smart contracts of DeFi app when a threat pattern gets detected by Fortress Threat Detection and Response Engine. Security Audit consists of checking vulnerabilities of smart contracts and logic errors related to past security incidents of DeFi apps. The engine is built on [Slither](https://github.com/crytic/slither). Vulnerability detectors of the engine are as in Detectors section.
+Fortress Live Security Audit runs a real-time security audit on deployed smart contracts of DeFi app when a threat pattern gets detected by Fortress Threat Detection and Response Engine. Security Audit consists of checking vulnerabilities of smart contracts and logic errors related to past security incidents of DeFi apps. The engine is built on [Slither](https://github.com/crytic/slither). Requires [Solc-select](https://github.com/crytic/solc-select/) to quickly switch between Solidity compiler versions.
 
 ## How to install
 
@@ -33,7 +33,6 @@ fortress 0x7F37f78cBD74481E593F9C737776F7113d76B315
 5. Run fortress-event-consumer as stated in README.
 6. Make sure Prequisites for fortress-security-audit-engine are installed. Manually run the example in above section to check everything is working.
 7. Run fortress-tdr-engine as stated in README. Threat detection and Response engine will query the MongoDB database of events using the REST API that Fortress Event Consumer defines and looks of threat patterns on these events. If a pattern gets detected, it will automatically run security audit and stop/let the event contract execution.
-
 
 ## Detectors
 
