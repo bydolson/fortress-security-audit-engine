@@ -89,3 +89,7 @@ Num | Detector | What it Detects | Impact | Confidence
 43 | `too-many-digits` | Conformance to numeric notation best practices  | Informational | Medium
 44 | `constable-states` | State variables that could be declared constant | Optimization | High
 45 | `external-function` | Public function that could be declared as external | Optimization | High
+
+
+NOTE: This is Pre-Alpha Release. Development for stable alpha release is being done and this may work unstable at the moment.
+
