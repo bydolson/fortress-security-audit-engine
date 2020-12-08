@@ -31,7 +31,7 @@ fortress 0x7F37f78cBD74481E593F9C737776F7113d76B315
 3. Update fortress-event-consumer code according to events you've chosen to listen on fortress-event-listener as stated in README. In the next version(alpha) all consumer code will be generated automatically by running a script.
 4. Run fortress-event-listener as stated in README. If you don't use Docker, make sure Kafka and MongoDB are running.
 5. Run fortress-event-consumer as stated in README.
-6. Make sure Prequisites for fortress-security-audit-engine are installed. Manually run the example in above section to check everything is working.
+6. Make sure Prequisites for fortress-security-audit-engine are installed. Manually run the security audit on etherscan as imn the example above to check everything is working.
 7. Run fortress-tdr-engine as stated in README. Threat detection and Response engine will query the MongoDB database of events using the REST API that Fortress Event Consumer defines and looks of threat patterns on these events. If a pattern gets detected, it will automatically run security audit and stop/let the event contract execution.
 
 ## Detectors
